@@ -1,4 +1,4 @@
-# NTI-Project
+# NTI - Project
 ## Tecnologies
 - ### NodeJs
 - ### AngularJs
