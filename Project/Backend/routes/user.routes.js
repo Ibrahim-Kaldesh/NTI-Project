@@ -8,6 +8,7 @@ router.post("/signup", User.signUp);
 router.post("/login", User.logIn);
 
 // actions for user authentications
+router.post("/", userAuth, User.showHome);
 router.post("/logout", userAuth, User.logOut);
 router.post("/showprofile", userAuth, User.showProfile);
 router.post("/editprofile", userAuth, User.editProfile);
@@ -16,6 +17,7 @@ router.post("/uploadImage", userAuth, upload.single("Image"), User.uploadImage);
 router.post("/changepassword", userAuth, User.changePassword);
 
 // admin authentications
+router.post("/", userAuth, adminAuth, User.showAdminHome);
 router.post("/changestatus/:id", userAuth, adminAuth, User.changeStatus);
 router.delete(
   "/deleteUser/:id",

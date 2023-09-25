@@ -1,10 +1,5 @@
-const {
-  resGen,
-  destrBookObject,
-  fetchBooksData,
-  transfornmBookdata,
-} = require("../helper");
-
+const { resGen } = require("../helper");
+const { fetchBooksData, transfornmBookdata } = require("../API.Data");
 const HandleJsonData = require("../dealWithJson");
 
 const handleSearchAndShowUserBooks = async function (req, res, t = "a") {

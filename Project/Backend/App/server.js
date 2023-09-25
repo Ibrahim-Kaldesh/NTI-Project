@@ -24,4 +24,8 @@ app.use("/users", userRouter);
 const bookRouter = require("../routes/book.routes");
 app.use("/books", bookRouter);
 
+app.get("/", (req, res) => {
+  res.send("Home");
+});
+
 module.exports = app;

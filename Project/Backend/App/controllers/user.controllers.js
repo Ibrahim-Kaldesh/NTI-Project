@@ -5,6 +5,13 @@ const bcrypt = require("bcrypt");
 class User {
   // fetures available for any user //
 
+  static async showHome(req, res) {
+    try {
+      resGen(res, 200, true, "Home showed Successfully", req.user);
+    } catch (e) {
+      resGen(res, 500, false, "Error occured in showing home", null);
+    }
+  }
   static async signUp(req, res) {
     try {
       const userData = new userModel(req.body);
@@ -59,14 +66,21 @@ class User {
     try {
       const { oldPsw, newPsw, confirmed } = req.body;
       const isCorrectPsw = await bcrypt.compare(oldPsw, req.user.password);
-      if (!isCorrectPsw) resGen(res, 500, false, "password is incorrect", null);
+      if (!isCorrectPsw) {
+        resGen(res, 500, false, "password is incorrect", null);
+        return;
+      }
       if (newPsw === confirmed) {
-        if (newPsw === oldPsw)
+        if (newPsw === oldPsw) {
           resGen(res, 500, false, "this is the same as the old password", null);
+          return;
+        }
         req.user.password = newPsw;
         req.user.confirmedPassword = newPsw;
+        req.user.tokens = req.user.tokens.filter((t) => t.token !== req.token);
         await req.user.save();
         resGen(res, 200, true, "password changed successfully", req.user);
+        return;
       }
       resGen(res, 500, false, "passwords doesn't matche", null);
     } catch (e) {
@@ -100,6 +114,13 @@ class User {
 
   // features for only admins //
 
+  static async showAdminHome(req, res) {
+    try {
+      resGen(res, 200, true, "Admin Home showed Successfully", req.user);
+    } catch (e) {
+      resGen(res, 500, false, "Error occured in showing home", null);
+    }
+  }
   static async changeStatus(req, res) {
     try {
       const userData = await userModel.findById(req.params.id);
