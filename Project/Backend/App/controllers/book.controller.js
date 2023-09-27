@@ -43,7 +43,7 @@ class Book {
       const allBooks = HandleJsonData.readFromJson();
       const book = allBooks.find((b) => b.id === req.params.id);
       if (!book) throw new Error("Book not found !!");
-      req.user.books.push(book);
+      req.user.books.push({ ...book, exists: true });
       await req.user.save();
       resGen(res, 200, true, "book added successfully", req.user);
     } catch (e) {
@@ -72,6 +72,7 @@ class Book {
         const idx = allBooks.findIndex((b) => b.id === req.params.id);
         if (idx !== -1) {
           allBooks[idx].wish = true;
+          allBooks[idx].exists = true;
           req.user.books.push(allBooks[idx]);
         } else throw new Error("Book not found !!");
       }

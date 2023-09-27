@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { BookCardComponent } from './Components/book-card/book-card.component';
 import { UserCardComponent } from './Components/user-card/user-card.component';
@@ -22,9 +24,7 @@ import { ChangePasswordComponent } from './Pages/change-password/change-password
 import { AdminNavbarComponent } from './Components/admin-navbar/admin-navbar.component';
 import { UserNavbarComponent } from './Components/user-navbar/user-navbar.component';
 import { HomeNavbarComponent } from './Components/home-navbar/home-navbar.component';
-;
-
-
+import { FooterComponent } from './Components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,9 +46,9 @@ import { HomeNavbarComponent } from './Components/home-navbar/home-navbar.compon
     AdminNavbarComponent,
     UserNavbarComponent,
     HomeNavbarComponent,
-
+    FooterComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

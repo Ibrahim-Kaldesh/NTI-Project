@@ -15,19 +15,39 @@ import { ChangePasswordComponent } from './Pages/change-password/change-password
 import { WishListBooksComponent } from './Pages/wish-list-books/wish-list-books.component';
 
 const routes: Routes = [
-  { path: '', component: AppHomeComponent },
-  { path: 'user-home', component: UserHomeComponent },
-  { path: 'admin-home', component: AdminHomeComponent },
-  { path: 'log-in', component: LogInComponent },
-  { path: 'sign-up', component: SignUpComponent },
-  { path: 'show-single-user', component: SingleUserComponent },
-  { path: 'allUsers', component: AllUsersComponent },
-  { path: 'active', component: ActiveUsersComponent },
-  { path: 'inactive', component: InactiveUsersComponent },
-  { path: 'show-profile', component: ShowUserProfileComponent },
-  { path: 'change-password', component: ChangePasswordComponent },
-  { path: 'allbooks', component: AllBooksComponent },
-  { path: 'wishlistBooks', component: WishListBooksComponent },
+  {
+    path: '',
+    children: [
+      { path: '', component: AppHomeComponent },
+      { path: 'log-in', component: LogInComponent },
+      { path: 'sign-up', component: SignUpComponent },
+    ],
+  },
+  {
+    path: 'user-home',
+    children: [
+      { path: '', component: UserHomeComponent },
+      { path: 'show-profile', component: ShowUserProfileComponent },
+      { path: 'change-password', component: ChangePasswordComponent },
+      { path: 'allbooks', component: AllBooksComponent },
+      { path: 'wishlistBooks', component: WishListBooksComponent },
+    ],
+  },
+  {
+    path: 'admin-home',
+    children: [
+      { path: '', component: AdminHomeComponent },
+      { path: 'sign-up', component: SignUpComponent },
+      { path: 'show-single-user', component: SingleUserComponent },
+      { path: 'allUsers', component: AllUsersComponent },
+      { path: 'active', component: ActiveUsersComponent },
+      { path: 'inactive', component: InactiveUsersComponent },
+      { path: 'show-profile', component: ShowUserProfileComponent },
+      { path: 'change-password', component: ChangePasswordComponent },
+      { path: 'allbooks', component: AllBooksComponent },
+      { path: 'wishlistBooks', component: WishListBooksComponent },
+    ],
+  },
 ];
 
 @NgModule({

@@ -1,36 +1,63 @@
-<div class="container">
+<div class="container my-5">
   <div class="row justify-content-center my-5">
     <div class="col-6">
       <div class="card">
         <div class="card-header"><h5>Log In</h5></div>
         <div class="card-body">
-          <form>
+          <form #loginForm="ngForm" (ngSubmit)="handleSubmit(loginForm)">
             <div class="row justify-content-center my-4">
               <div class="col-7 my-3">
                 <label for="email" class="form-label">Email address</label>
                 <input
+                  required
+                  email
+                  [(ngModel)]="model.email"
+                  #email="ngModel"
                   name="email"
                   type="email"
                   class="form-control"
                   id="email"
                   aria-describedby="emailHelp"
                 />
+                <div
+                  class="alert alert-danger"
+                  *ngIf="(email.dirty || loginForm.submitted) && email.invalid"
+                >
+                  <div *ngIf="email.errors?.['required']">
+                    email is required
+                  </div>
+                  <div *ngIf="email.invalid &&!email.errors?.['required']">
+                    email is invalid
+                  </div>
+                </div>
               </div>
               <div class="col-7">
                 <label for="pass" class="form-label">Password</label>
                 <input
+                  required
+                  [(ngModel)]="model.password"
+                  #password="ngModel"
                   type="password"
                   class="form-control"
                   id="pass"
                   name="password"
+                  pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}"
                 />
+                <div
+                  class="alert alert-danger"
+                  *ngIf="
+                    (password.dirty || loginForm.submitted) && password.invalid
+                  "
+                >
+                  Invalid Password -> contains at least 8 characters , one
+                  digit,one upper case alphabet , one lower case alphabet ,one
+                  special character and doesn’t contain any white space.
+                </div>
               </div>
             </div>
             <div class="row justify-content-center">
-              <div class="col-2 my-2">
-                <button type="submit" class="btn btn-primary my-2">
-                  Log in
-                </button>
+              <div class="col-3 my-2">
+                <button class="btn btn-primary my-2">Sign in</button>
               </div>
             </div>
           </form>

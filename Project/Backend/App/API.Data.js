@@ -40,8 +40,9 @@ const transfornmBookdata = function (req, allBooks) {
     const newBookFormat = destrBookObject(book);
     const idx = req.user.books.findIndex((b) => b.id === book.id);
     idx !== -1
-      ? (newBookFormat.wish = req.user.books[idx].wish)
-      : (newBookFormat.wish = false);
+      ? ((newBookFormat.wish = req.user.books[idx].wish),
+        (newBookFormat.exists = true))
+      : ((newBookFormat.wish = false), (newBookFormat.exists = false));
     return newBookFormat;
   });
 };

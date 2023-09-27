@@ -1,0 +1,686 @@
+{
+	"info": {
+		"_postman_id": "af86a6b6-1bc0-4f1c-b8e9-3b601dc9b4f9",
+		"name": "Library",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29827163"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "sign - up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fName\":\"Ibrahim\",\r\n    \"lName\":\"Ali\",\r\n    \"email\":\"ibrahimkaldesh1@gmail.com\",\r\n    \"password\":\"Test@123!\",\r\n    \"confirmedPassword\":\"Test@123!\",\r\n    \"countryCode\":\"ar-EG\",\r\n    \"phone\":\"01000862591\",\r\n    \"userType\":\"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_host_user}}/signup",
+							"host": [
+								"{{local_host_user}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "log - in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"email\": \"ibrahimkaldesh@gmail.com\",\r\n   \"password\":\"Test@123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_host_user}}/login",
+							"host": [
+								"{{local_host_user}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "log - out",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTBmMTkwMWM5YTVmYzUwOTFmNmVlMmUiLCJpYXQiOjE2OTU0ODgyNjJ9.JFuhmSdnumpNwVW14VZGJNEbTc_HyjWO7V-vaSFX7GQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_host_user}}/logout",
+							"host": [
+								"{{local_host_user}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show - profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTEwODFiY2U3MDU1NDc1YjM4MGJkY2IiLCJpYXQiOjE2OTU1ODQyMjV9.VC7vfSy83EcVKWruPEYSYZEJrds0MSzMoy_J5h-KFDs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_host_user}}/showprofile",
+							"host": [
+								"{{local_host_user}}"
+							],
+							"path": [
+								"showprofile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit - profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTEwNzc4Mzc4ZDZjOGRlYThiNDM5NzIiLCJpYXQiOjE2OTU1ODAyNzV9.1Fu5UnEtGK-cGTD3h49d-qiYZr9Q9ap_dGQZmytBBwY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fName\":\"Admin1\",\r\n    \"email\":\"Admin@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_host_user}}/editprofile",
+							"host": [
+								"{{local_host_user}}"
+							],
+							"path": [
+								"editprofile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete - acc",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTBlZDA4YWVlNTM0YmQyZjU0MjIwMTEiLCJpYXQiOjE2OTU0ODgwMzd9.hR8m_ykHfzxog1ivZe_nARbQBjkuuQFD-xsCW3anmfw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_host_user}}/deleteAcc",
+							"host": [
+								"{{local_host_user}}"
+							],
+							"path": [
+								"deleteAcc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload - image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTEwODFiY2U3MDU1NDc1YjM4MGJkY2IiLCJpYXQiOjE2OTU1ODIyNTR9.DJGr5CXFEQsLiTFJBZ-Zlsmz--MEJdmE37i3-saPn3g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Image",
+									"type": "file",
+									"src": "/C:/Users/KALDESH/Pictures/Screenshots/Screenshot (23).png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_host_user}}/uploadImage",
+							"host": [
+								"{{local_host_user}}"
+							],
+							"path": [
+								"uploadImage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change - password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTEwODFiY2U3MDU1NDc1YjM4MGJkY2IiLCJpYXQiOjE2OTU1ODQyMjV9.VC7vfSy83EcVKWruPEYSYZEJrds0MSzMoy_J5h-KFDs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPsw\":\"Admin@123!!\",\r\n    \"newPsw\":\"Admin@123!\",\r\n    \"confirmed\":\"Admin@123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_host_user}}/changepassword",
+							"host": [
+								"{{local_host_user}}"
+							],
+							"path": [
+								"changepassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-home",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTEzMjZiZmYxZmY2OGU5MTBlOGQ0ZmUiLCJpYXQiOjE2OTU3NTM5NzN9.ftVVN7_tmgdJH18_1b32TEuJijQL_5wHSiPjGnJLPVA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_host_user}}/user-home",
+							"host": [
+								"{{local_host_user}}"
+							],
+							"path": [
+								"user-home"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "search - book",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTEwODFiY2U3MDU1NDc1YjM4MGJkY2IiLCJpYXQiOjE2OTU3NDkyNjZ9.Elv__OIYZiMg49Y_z4G29DdPGplPqZBTtw0h9UlNC2U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"search\":\"Neural Network\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_host_book}}/searchbook",
+							"host": [
+								"{{local_host_book}}"
+							],
+							"path": [
+								"searchbook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add - Book /:id",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTEwODFiY2U3MDU1NDc1YjM4MGJkY2IiLCJpYXQiOjE2OTU3NDkyNjZ9.Elv__OIYZiMg49Y_z4G29DdPGplPqZBTtw0h9UlNC2U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_host_book}}/addbook/Ifs6hwi3mNMC",
+							"host": [
+								"{{local_host_book}}"
+							],
+							"path": [
+								"addbook",
+								"Ifs6hwi3mNMC"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add - book - wish  /:id",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTEwODFiY2U3MDU1NDc1YjM4MGJkY2IiLCJpYXQiOjE2OTU3NDkyNjZ9.Elv__OIYZiMg49Y_z4G29DdPGplPqZBTtw0h9UlNC2U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_host_book}}/addbookwish/xtE5PwAACAAJ",
+							"host": [
+								"{{local_host_book}}"
+							],
+							"path": [
+								"addbookwish",
+								"xtE5PwAACAAJ"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove - book  /:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTEwODFiY2U3MDU1NDc1YjM4MGJkY2IiLCJpYXQiOjE2OTU3NDkyNjZ9.Elv__OIYZiMg49Y_z4G29DdPGplPqZBTtw0h9UlNC2U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_host_book}}/removebook/TVamwAEACAAJ",
+							"host": [
+								"{{local_host_book}}"
+							],
+							"path": [
+								"removebook",
+								"TVamwAEACAAJ"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove - book - wish  /:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTEwODFiY2U3MDU1NDc1YjM4MGJkY2IiLCJpYXQiOjE2OTU3NDkyNjZ9.Elv__OIYZiMg49Y_z4G29DdPGplPqZBTtw0h9UlNC2U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_host_book}}/removebookwish/9_M-AQAAMAAJ",
+							"host": [
+								"{{local_host_book}}"
+							],
+							"path": [
+								"removebookwish",
+								"9_M-AQAAMAAJ"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show - all - books",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTEwODFiY2U3MDU1NDc1YjM4MGJkY2IiLCJpYXQiOjE2OTU3NDkyNjZ9.Elv__OIYZiMg49Y_z4G29DdPGplPqZBTtw0h9UlNC2U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"search\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_host_book}}/showallbooks",
+							"host": [
+								"{{local_host_book}}"
+							],
+							"path": [
+								"showallbooks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show - all - wishBooks",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTEwODFiY2U3MDU1NDc1YjM4MGJkY2IiLCJpYXQiOjE2OTU3NDkyNjZ9.Elv__OIYZiMg49Y_z4G29DdPGplPqZBTtw0h9UlNC2U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"search\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_host_book}}/showallwishBooks",
+							"host": [
+								"{{local_host_book}}"
+							],
+							"path": [
+								"showallwishBooks"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "change - status /:id",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTEwODFiY2U3MDU1NDc1YjM4MGJkY2IiLCJpYXQiOjE2OTU1ODQyMjV9.VC7vfSy83EcVKWruPEYSYZEJrds0MSzMoy_J5h-KFDs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_host_user}}/changestatus/6510778378d6c8dea8b43972",
+							"host": [
+								"{{local_host_user}}"
+							],
+							"path": [
+								"changestatus",
+								"6510778378d6c8dea8b43972"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete - user /:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTBmMTkwMWM5YTVmYzUwOTFmNmVlMmUiLCJpYXQiOjE2OTU0OTI4MDZ9.LHR5cE1tyHqFST6_k-kHLRY4S3tN9mvenAGhOKBD3eA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_host_user}}/deleteUser/650f1901c9a5fc5091f6ee2e",
+							"host": [
+								"{{local_host_user}}"
+							],
+							"path": [
+								"deleteUser",
+								"650f1901c9a5fc5091f6ee2e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show - user /:id",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTBmMTkwMWM5YTVmYzUwOTFmNmVlMmUiLCJpYXQiOjE2OTU0OTI4MDZ9.LHR5cE1tyHqFST6_k-kHLRY4S3tN9mvenAGhOKBD3eA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_host_user}}/show/6510778378d6c8dea8b43972",
+							"host": [
+								"{{local_host_user}}"
+							],
+							"path": [
+								"show",
+								"6510778378d6c8dea8b43972"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show - all users",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTBmMTkwMWM5YTVmYzUwOTFmNmVlMmUiLCJpYXQiOjE2OTU1ODA1MTl9.8i7uccYwq1r8UG1zZE7dlff05p6phemh6qUQ_qdu10I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_host_user}}/showall",
+							"host": [
+								"{{local_host_user}}"
+							],
+							"path": [
+								"showall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show - active",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTEwNzc4Mzc4ZDZjOGRlYThiNDM5NzIiLCJpYXQiOjE2OTU1ODAyNzV9.1Fu5UnEtGK-cGTD3h49d-qiYZr9Q9ap_dGQZmytBBwY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_host_user}}/showactive",
+							"host": [
+								"{{local_host_user}}"
+							],
+							"path": [
+								"showactive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show - inactive",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTBmMTkwMWM5YTVmYzUwOTFmNmVlMmUiLCJpYXQiOjE2OTU1ODA1MTl9.8i7uccYwq1r8UG1zZE7dlff05p6phemh6qUQ_qdu10I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_host_user}}/showinactive",
+							"host": [
+								"{{local_host_user}}"
+							],
+							"path": [
+								"showinactive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add - admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTBmMTkwMWM5YTVmYzUwOTFmNmVlMmUiLCJpYXQiOjE2OTU1ODA1MTl9.8i7uccYwq1r8UG1zZE7dlff05p6phemh6qUQ_qdu10I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fName\":\"admin\",\r\n    \"lName\":\"admin\",\r\n    \"email\":\"admin1@gmail.com\",\r\n    \"password\":\"Admin123!\",\r\n    \"confirmedPassword\":\"Admin123!\",\r\n    \"countryCode\":\"ar-EG\",\r\n    \"phone\":\"01110862591\",\r\n    \"userType\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_host_user}}/addAdmin",
+							"host": [
+								"{{local_host_user}}"
+							],
+							"path": [
+								"addAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin-home",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTEwODFiY2U3MDU1NDc1YjM4MGJkY2IiLCJpYXQiOjE2OTU3NDkyNjZ9.Elv__OIYZiMg49Y_z4G29DdPGplPqZBTtw0h9UlNC2U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_host_user}}/admin-home",
+							"host": [
+								"{{local_host_user}}"
+							],
+							"path": [
+								"admin-home"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local_host_user",
+			"value": "http://127.0.0.1:3000/users",
+			"type": "string"
+		},
+		{
+			"key": "local_host_book",
+			"value": "http://127.0.0.1:3000/books",
+			"type": "string"
+		}
+	]
+}

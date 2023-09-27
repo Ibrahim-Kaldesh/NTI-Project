@@ -58,6 +58,10 @@ const bookModel = {
     type: Boolean,
     default: false,
   },
+  exists: {
+    type: Boolean,
+    default: false,
+  },
 };
 
 // create user schema
