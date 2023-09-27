@@ -18,8 +18,8 @@ export class LogInComponent {
 
   handleSubmit(form: NgForm) {
     if (form.valid) {
-      this.auth.login(form).subscribe((res) => {
-        console.log(res);
+      this.auth.login(this.model).subscribe((res) => {
+        console.log(res.data);
       });
     }
   }
